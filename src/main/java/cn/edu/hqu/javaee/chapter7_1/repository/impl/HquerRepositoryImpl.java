@@ -44,7 +44,7 @@ public class HquerRepositoryImpl implements HquerRepository {
 				return hquer;
 			}
 
-		}, "zhangsan");
+		}, userName);
 		
 		if (list.size() >= 1) {
 			return list.get(0);
