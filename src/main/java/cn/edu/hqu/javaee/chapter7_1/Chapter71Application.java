@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Chapter71Application {
-	public static final String ROOT = "classpath:upload-dir";
+	public static final String ROOT = "D:\\upload-dir";
 	public static void main(String[] args) throws IOException {
 		File file=new File(ROOT);
 		if(!file.exists()) {
