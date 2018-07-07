@@ -7,19 +7,24 @@
 	href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet">
 
-<title>用户信息</title>
+<title>会面信息</title>
 </head>
 <body>
 <div class="container col-md-12">
    <table class="table">
    <thead>
-    <tr><td colspan="2">用户信息</td></tr>
+    <tr><td colspan="2">房屋信息</td></tr>
    </thead>
-   <tr><td>姓名：</td><td th:text="${hquer.firstName}+${hquer.lastName}">姓名</td></tr>
-   <tr><td>用户名：</td><td th:text="${hquer.userName}">用户名</td></tr>
-   <tr><td>E-Mail:</td><td th:text="${hquer.email}">Email</td></tr>
+   <tr><td>房主姓名：</td><td th:text="${sellerinformation.firstName}+${sellerinformation.lastName}">姓名</td></tr>
+   <tr><td>房主ID：</td><td th:text="${sellerinformation.userName}">房主ID</td></tr>
+   <tr><td>适合居住人数:</td><td th:text="${seller.nop}">适合居住人数</td></tr>
+      <tr><td>房租：</td><td th:text="${seller.userName}">房主ID</td></tr>
+   <tr><td>是否可租:</td><td th:text="${seller.ifnot}">适合居住人数</td></tr>
+      <tr><td>类型：</td><td th:text="${seller.type}">类型</td></tr>
+   <tr><td>房屋地址:</td><td th:text="${seller.nop}">适合居住人数</td></tr>
+      <tr><td>会面地址：</td><td th:text="${seller.type}">会面地址</td></tr>
+   <tr><td>会面时间:</td><td th:text="${seller.nop}">会面时间</td></tr>
    </table>
-   <a th:href="@{'/message/'+${hquer.userName}}">查看我的消息</a>
    <a th:href="@{/hquer/login}">重新登陆</a>
 </div>
 </body>

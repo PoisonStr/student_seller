@@ -27,7 +27,7 @@ public class Message {
 	@Getter
 	@Setter
 	private Long hquerId;
-	@Override
+	@Override//将发送过的消息显示出来
 	public boolean equals(Object that) {
 		return EqualsBuilder.reflectionEquals(this,that,"id","time");
 	}

@@ -15,32 +15,34 @@ import cn.edu.hqu.javaee.chapter7_1.repository.MessageRepository;
 
 @Repository
 public class MessageRepositoryImpl implements MessageRepository {
+	private static final String SQL_INSERT_Message = "insert into hquer (posttime,misstime,username,missplace) values(?,?,?,?)";
+	private static final String SQL_FIND_Message= "select id,posttime,misstime,username,missplace from hquer where username=?";
 
-	private static final String SQL_SAVE_MESSAGE = "insert into message (hquerId,message,postedTime) values(?,?,?)";
-	private static final String SQL_FIND_MESSAGE_BY_HQUERID = "select id,hquerId,message,postedTime from message where hquerId=?";
 	@Autowired
 	private JdbcOperations jdbcOperations;
+	public void save(Message message) {
+		// TODO Auto-generated method stub
+		jdbcOperations.update(SQL_INSERT_message, message.getPosttime(),message.getusername(),message.getmissplace(),message.getmisstime());
+	}
 	@Override
-	public List<Message> findMessageByUserId(Long userId) {
+	public List<Message> findMessageByUserId(Date username) {
 		List<Message> list=new ArrayList<Message>();
-		list=jdbcOperations.query(SQL_FIND_MESSAGE_BY_HQUERID, new RowMapper<Message>() {
+		list=jdbcOperations.query(SQL_FIND_Message, new RowMapper<Message>() {
 
 			@Override
 			public Message mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Message message=new Message();
-				message.setHquerId(rs.getLong("hquerId"));
-				message.setMessage(rs.getString("message"));
-				message.setPostedTime(rs.getDate("postedTime"));
+				message.setPostedTime(rs.getLong("posttime"));
+				message.setusername(rs.getString("username"));
+				message.setmissplace(rs.getDate("missplace"));
+				message.setmisstime(rs.getDate("misstime"));
 				return message;
 			}
 			
-		}, userId);
+		}, username);
 		return list;
 	}
 	@Override
-	public void save(Message message) {
-		// TODO Auto-generated method stub
-		jdbcOperations.update(SQL_SAVE_MESSAGE, message.getHquerId(),message.getMessage(),message.getPostedTime());
-	}
+	
 
 }

@@ -13,15 +13,14 @@
 	height: 100%;
 }
 </style>
-<title>学生注册</title>
+<title>房主注册</title>
 </head>
 <body>
 	<div class="container">
 		<div class="col-md-6 col-offset-3">
 			<h1>注册</h1>
-			
-			<form class="form-horizontal" role="form" action="/hquer/register"
-				th:action="@{/hquer/register}" th:object="${hquer}" method="post"
+			<form class="form-horizontal" role="form" action="/seller/register"
+				th:action="@{/seller/sellerregister}" th:object="${seller}" method="post"
 				th:method="post" enctype="multipart/form-data">
 				<div class="form-group row">
 					<label for="firstName" class="col-md-3 col-form-label"
@@ -43,10 +42,10 @@
 				</div>
 				<div class="form-group row">
 					<label for="address" class="col-md-3 col-form-label"
-						th:classappend="${#fields.hasErrors('address')}?'badge badge-danger'">现住址：</label>
+						th:classappend="${#fields.hasErrors('address')}?'badge badge-danger'">地址：</label>
 					<div class="col-md-9">
 						<input type="text" class="form-control" id="address"
-							placeholder="请输入现住址"  th:field="*{address}"
+							placeholder="请输入地址"  th:field="*{address}"
 							th:classappend="${#fields.hasErrors('address')}?'text-danger'">
 					</div>
 				</div>
@@ -58,31 +57,13 @@
 							placeholder="请输入电话"  th:field="*{tel}"
 							th:classappend="${#fields.hasErrors('tel')}?'text-danger'">
 					</div>
-				</div>
-				                <div class="form-group row">
-					<label for="date" class="col-md-3 col-form-label"
-						th:classappend="${#fields.hasErrors('date')}?'badge badge-danger'">出生日期：</label>
-					<div class="col-md-9">
-						<input type="date" class="form-control" id="date"
-							placeholder="请输入出生日期"  th:field="*{date}"
-							th:classappend="${#fields.hasErrors('date')}?'text-danger'">
-					</div>
-				</div>                
-				<div class="form-group row">
-					<label for="sex" class="col-md-3 col-form-label"
-						th:classappend="${#fields.hasErrors('sex')}?'badge badge-danger'">性别：</label>
-					<div class="col-md-9">
-						<input type="text" class="form-control" id="sex"
-							placeholder="请输入性别"  th:field="*{sex}"
-							th:classappend="${#fields.hasErrors('sex')}?'text-danger'">
-					</div>
-				</div>
+				</div>           
 				<div class="form-group row">
 					<label for="username" class="col-md-3 col-form-label"
 						th:classappend="${#fields.hasErrors('userName')}?'badge badge-danger'">学生ID：</label>
 					<div class="col-md-9">
 						<input type="number" class="form-control" id="username"
-							placeholder="请输入学生ID"  th:field="*{userName}"
+							placeholder="请输入房主ID"  th:field="*{userName}"
 							th:classappend="hlo[i].getId()">//添加自动分配的ID
 					</div>
 				</div>
@@ -103,6 +84,3 @@
 	</div>
 </body>
 </html>
-
-
-

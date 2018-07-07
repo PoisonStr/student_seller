@@ -13,7 +13,7 @@
 	height: 100%;
 }
 </style>
-<title>我的消息列表</title>
+<title>我的会面消息列表</title>
 </head>
 <body>
 	<div class="container">
@@ -27,7 +27,8 @@
 			</tr>
 			<tr th:each="msg:${msgList}">
 			<td th:text="${msgStat.index}">编号</td>
-			<td th:text="${msg.message}">消息体</td>
+			<td th:text="${msg.message}">会面时间</td>
+			<td th:text="${msg.message}">会面地点</td>
 			<td th:text="${msg.postedTime}">发送时间</td>
 			</tr>
 			</table>

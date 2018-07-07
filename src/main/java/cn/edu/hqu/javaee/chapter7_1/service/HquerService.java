@@ -6,4 +6,5 @@ public interface HquerService {
 	public Hquer login(String userName,String password);
 	public boolean register(Hquer hquer);
 	public Hquer getUserDetail(String userName);
+    public void add(String ID);
 }

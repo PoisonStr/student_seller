@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link
+	href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<title>会面信息</title>
+</head>
+<body>
+<div class="container col-md-12">
+   <table class="table">
+   <thead>
+    <tr><td colspan="2">学生信息</td></tr>
+   </thead>
+   <tr><td>学生姓名：</td><td th:text="${hquer.firstName}+${sellerinformation.lastName}">姓名</td></tr>
+   <tr><td>学生ID：</td><td th:text="${hquer.userName}">学生ID</td></tr>
+      <tr><td>学生电话：</td><td th:text="${hquer.type}">学生电话</td></tr>
+      <tr><td>会面地址：</td><td th:text="${miss.missplace}">会面地址</td></tr>
+   <tr><td>会面时间:</td><td th:text="${miss.misstime}">会面时间</td></tr>
+   </table>
+   <a th:href="@{/hquer/login}">重新登陆</a>
+</div>
+</body>
+</html>

@@ -6,9 +6,9 @@ import java.io.IOException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication//规定路径用于存储照片
 public class Chapter71Application {
-	public static final String ROOT = "D:\\upload-dir";
+	public static final String ROOT = "D:\\voa";
 	public static void main(String[] args) throws IOException {
 		File file=new File(ROOT);
 		if(!file.exists()) {
